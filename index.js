@@ -14,7 +14,7 @@ mongoose.connect(
 );
 
 // Import routes
-const jobRoutes = require("./routes/job");
+const jobRoutes = require("./routes/jobs");
 
 // Middlewares
 app.use(express.json());
