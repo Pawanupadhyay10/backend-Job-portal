@@ -1,0 +1,12 @@
+<div class="container">
+    <h1 class="text-center mb-3">jobs List by CodeWithHarry</h1>
+    <app-add-jobs (jobsAdd)="addjobs($event)"></app-add-jobs>
+    <h4>Your jobss</h4>
+    <div *ngIf="this.jobss.length===0; else elseBlock">No jobss to display</div>
+    <ng-template #elseBlock>
+        <div *ngFor="let jobs of jobss; index as i">
+            <app-jobs-item [jobs]="jobs" [i]="i" (jobsDelete)="deletejobs($event)" (jobsCheckbox)="togglejobs($event)">
+            </app-jobs-item>
+        </div>
+    </ng-template>
+</div> 
